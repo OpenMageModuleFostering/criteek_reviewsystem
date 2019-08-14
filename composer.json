@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Criteek_Reviewsystem",
+    "type": "magento-module",
+    "license": "CRITEEK-TERMS-OF-SERVICE",
+    "homepage": "",
+    "description": "Criteek is authentic video review provider for website",
+    "authors": [
+    {
+        "name": "Criteek",
+        "email": "magento@criteek.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

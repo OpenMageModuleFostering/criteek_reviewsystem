@@ -1,0 +1,23 @@
+<?php
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ *
+ * @category   Criteek
+ * @package    Criteek_Reviewsystem
+ * @copyright  Copyright (c) 2016 Criteek Comm LLC.
+ * @author	   Criteek Developer
+ * @license    https://www.criteek.tv/terms-of-use CRITEEK TERMS OF USE
+ */
+
+if(Mage::getStoreConfig('reviewsystem/manage_widget_config/widget_synch')==1) {
+    $_product = Mage::registry('current_product');
+    echo '<div id="criteek-widget"
+data-product-id="' . $_product->getSku() . '"data-name="' . $_product->getName() . '"
+data-url="' . $_product->getProductUrl() . '" data-description="' . $_product->getName() . '"
+data-product-spec-brand="PRODUCT BRAND"data-product-spec-upc="' . $_product->getUpc() . '"
+data-product-spec-ean="EAN" data-product-spec-sku="' . $_product->getSku() . '"></div>
+<script id="criteekwidget"src="https://widget.criteek.tv/servicewidget_v1.js"></script>';
+}
+?>
