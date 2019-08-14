@@ -12,12 +12,30 @@
  */
 
 if(Mage::getStoreConfig('reviewsystem/manage_widget_config/widget_synch')==1) {
+
     $_product = Mage::registry('current_product');
-    echo '<div id="criteek-widget"
-data-product-id="' . $_product->getSku() . '"data-name="' . $_product->getName() . '"
-data-url="' . $_product->getProductUrl() . '" data-description="' . $_product->getName() . '"
-data-product-spec-brand="PRODUCT BRAND"data-product-spec-upc="' . $_product->getUpc() . '"
-data-product-spec-ean="EAN" data-product-spec-sku="' . $_product->getSku() . '"></div>
-<script id="criteekwidget"src="https://widget.criteek.tv/servicewidget_v1.js"></script>';
+     $categoryIds = $_product->getCategoryIds();
+     if(count($categoryIds) ){
+          $firstCategoryId = $categoryIds[0];
+          $_category = Mage::getModel('catalog/category')->load($firstCategoryId);
+          $catName = $_category->getName();
+     }
+     $imageUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'catalog/product' . $_product->getImage();
+
+     echo '<div id="criteek-widget"
+     data-product-id="'.$_product->getId().'"
+     data-name="'.$_product->getName().'"
+     data-product-spec-upc="'.$_product->getUpc().'"
+     data-product-spec-external-sku=""
+     data-product-spec-sku="'.$_product->getSku().'"
+     data-product-spec-brand=""
+     data-description="'.$_product->getName().'"
+     data-url="'.$_product->getProductUrl().'"
+     data-product-spec-category="'.$catName.'"
+     data-widgetId="'.Mage::getStoreConfig('reviewsystem/product_review_config/widgetId').'"
+     data-image-url="'.$imageUrl.'" ></div>
+    <script id="criteekwidget"  src="'.Mage::helper('reviewsystem')->getWidgetjsUrl().'"></script>';
+
 }
+
 ?>

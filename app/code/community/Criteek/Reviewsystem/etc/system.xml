@@ -1,112 +1,152 @@
 <?xml version="1.0"?>
-
 <config>
-	<tabs>
-		<criteek translate="label" module="reviewsystem">
-			<label>Criteek Review</label>
-			<sort_order>209</sort_order>
-		</criteek>
-	</tabs>
-	<sections>
-			<reviewsystem translate="label" module="reviewsystem">
-								<label>Criteek Review System</label>
-								<tab>criteek</tab>
-								<frontend_type>text</frontend_type>
-								<sort_order>112</sort_order>
-								<show_in_default>1</show_in_default>
-								<show_in_website>0</show_in_website>
-								<show_in_store>0</show_in_store>
-				  <groups>
-					    <product_review_config translate="label">
-										<label>Enable/Disable Settings</label>
-										<frontend_type>text</frontend_type>
-										<sort_order>1</sort_order>
-										<show_in_default>1</show_in_default>
-										<show_in_website>0</show_in_website>
-										<show_in_store>0</show_in_store>
-										<expanded>1</expanded>
-										<comment><![CDATA[Please enter in your Api App Key and Secret in the fields below to finish the installation.If you need help the Criteek support team is here 24/7, don't hesitate to contact us.<br/> <a target="_blank" href="https://www.criteek.tv/">Click here</a> for the advanced customization guide.]]></comment>
-									 <fields>
-									 <criteek_synch translate="label">
-													<label>Enable API Module</label>
-													<frontend_type>select</frontend_type>
-													<source_model>adminhtml/system_config_source_yesno</source_model>
-													<sort_order>1</sort_order>
-													<show_in_default>1</show_in_default>
-													<show_in_website>1</show_in_website>
-													<show_in_store>1</show_in_store>
-												</criteek_synch> 
-												<api_app_key translate="label">
-													<label>API Key</label>
-													<frontend_type>text</frontend_type>
-						<comment><![CDATA[Get your API Key at your Criteek account setting page. Click here to sign in to <a target="_blank" href="https://www.criteek.tv/user/login">Criteek</a>]]></comment>
-													<sort_order>4</sort_order>
-													<show_in_default>1</show_in_default>
-													<show_in_website>0</show_in_website>
-													<show_in_store>0</show_in_store>
-													<validate>required-entry</validate>
-													<depends><criteek_synch>1</criteek_synch></depends>
-												</api_app_key>	
-												<api_app_secret translate="label">
-													<label>API Secret</label>
-						<comment><![CDATA[Get your API Secret at your Criteek account setting page. Click here to sign in to <a target="_blank" href="https://www.criteek.tv/user/login">Criteek</a>]]></comment>
-													<frontend_type>Password</frontend_type>
-													<sort_order>5</sort_order>
-													<show_in_default>1</show_in_default>
-													<show_in_website>0</show_in_website>
-													<show_in_store>0</show_in_store>
-													<validate>required-entry</validate>
-													<depends><criteek_synch>1</criteek_synch></depends>
-											 </api_app_secret>	
-										<allowed_status translate="label">
-										<label> Custom Mail After Purchase Order Status</label>
-										<frontend_type>select</frontend_type>
-										<source_model>reviewsystem/order_status</source_model>
-										<sort_order>10</sort_order>
-										<show_in_default>1</show_in_default>
-										<show_in_website>1</show_in_website>
-										<show_in_store>0</show_in_store>
-										<can_be_empty>1</can_be_empty>
-									</allowed_status>
-											 
-									 </fields>
-							 </product_review_config>
-							 
-							 </groups>
-				<groups>
-					<manage_widget_config translate="label">
-						<label>Manage Widget Settings</label>
-						<frontend_type>text</frontend_type>
-						<sort_order>113</sort_order>
-						<show_in_default>1</show_in_default>
-						<show_in_website>0</show_in_website>
-						<show_in_store>0</show_in_store>
-						<expanded>1</expanded>
-						<fields>
-							<widget_synch translate="label">
-								<label>Enable/Disable Widget</label>
-								<frontend_type>select</frontend_type>
-								<source_model>adminhtml/system_config_source_yesno</source_model>
-								<sort_order>1</sort_order>
-								<show_in_default>1</show_in_default>
-								<show_in_website>1</show_in_website>
-								<show_in_store>1</show_in_store>
-							</widget_synch>
-							<widget_js_code translate="label">
-								<label> Widget JS Code</label>
-								<frontend_type>textarea</frontend_type>
-								<comment>Please don't change this code</comment>
-								<sort_order>10</sort_order>
-								<show_in_default>1</show_in_default>
-								<show_in_website>1</show_in_website>
-								<show_in_store>1</show_in_store>
-								<depends><widget_synch>1</widget_synch></depends>
-							</widget_js_code>
-						</fields>
-					</manage_widget_config>
-				</groups>
-			</reviewsystem>
-	   </sections>	   
+  <tabs>
+    <criteek translate="label" module="reviewsystem">
+      <label>Criteek Review</label>
+      <sort_order>209</sort_order>
+    </criteek>
+  </tabs>
+  <sections>
+    <reviewsystem translate="label" module="reviewsystem">
+      <label>Criteek Review System</label>
+      <tab>criteek</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>112</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <product_review_config translate="label">
+          <label>General Settings</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>1</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <expanded>1</expanded>
+          <comment>
+            <![CDATA[Please enter in your Api App Key and Secret in the fields below to finish the installation.If you need help the Criteek support team is here 24/7, don't hesitate to contact us.<br/> <a target="_blank" href="https://www.criteek.tv/">Click here</a> for the advanced customization guide.]]>
+          </comment>
+          <fields>
+            <criteek_synch translate="label">
+              <label>Enable API Module</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </criteek_synch>
+            <api_app_key translate="label">
+              <label>API Key</label>
+              <frontend_type>text</frontend_type>
+              <comment>
+                <![CDATA[Get your API Key at your Criteek account setting page. Click here to sign in to <a target="_blank" href="https://www.criteek.tv/user/login">Criteek</a>]]>
+              </comment>
+              <sort_order>4</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+              <validate>required-entry</validate>
+              <depends>
+                <criteek_synch>1</criteek_synch>
+              </depends>
+            </api_app_key>
+            <api_app_secret translate="label">
+              <label>API Secret</label>
+              <comment>
+                <![CDATA[Get your API Secret at your Criteek account setting page. Click here to sign in to <a target="_blank" href="https://www.criteek.tv/user/login">Criteek</a>]]>
+              </comment>
+              <frontend_type>Password</frontend_type>
+              <sort_order>5</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>0</show_in_website>
+              <show_in_store>0</show_in_store>
+              <validate>required-entry</validate>
+              <depends>
+                <criteek_synch>1</criteek_synch>
+              </depends>
+            </api_app_secret>
+            <widgetId translate="label">
+              <label>Widget ID</label>
+              <frontend_type>text</frontend_type>
+              <sort_order>6</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <validate>required-entry</validate>
+            </widgetId>
+            <enable_mailpurchase translate="label">
+              <label>Enable "Mail after purchase"</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>7</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </enable_mailpurchase>
+            <allowed_status translate="label">
+              <label>Custom Mail After Purchase Order Status</label>
+              <frontend_type>select</frontend_type>
+              <source_model>reviewsystem/source_order_status</source_model>
+              <sort_order>8</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>0</show_in_store>
+              <can_be_empty>1</can_be_empty>
+              <depends>
+                <enable_mailpurchase>1</enable_mailpurchase>
+              </depends>
+            </allowed_status>
+			<orders_export translate="label">
+              <label>Send Mail After Purchase emails for orders created in the last 90 days</label>
+              <frontend_type>button</frontend_type>
+              <frontend_model>reviewsystem/adminhtml_system_config_button</frontend_model>
+              <sort_order>9</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <comment>
+                <![CDATA[By pressing this button, we'll send Mail After Purchase emails for your past purchases. This may take a few minutes.]]>
+              </comment>
+            </orders_export>
+          </fields>
+        </product_review_config>
+      </groups>
+      <groups>
+        <manage_widget_config translate="label">
+          <label>Manage Widget Settings</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>113</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+          <expanded>1</expanded>
+          <fields>
+            <widget_synch translate="label">
+              <label>Enable/Disable Widget</label>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </widget_synch>
+            <widget_js_code translate="label">
+              <label>Widget JS Code</label>
+              <frontend_type>textarea</frontend_type>
+              <comment>Please don't change this code</comment>
+              <sort_order>10</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+              <depends>
+                <widget_synch>1</widget_synch>
+              </depends>
+            </widget_js_code>
+          </fields>
+        </manage_widget_config>
+      </groups>
+    </reviewsystem>
+  </sections>
 </config>
-
-
